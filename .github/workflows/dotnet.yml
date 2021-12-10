@@ -26,3 +26,57 @@ jobs:
           dotnet restore ./acronym
           dotnet build --no-restore ./acronym
           dotnet test --no-build --verbosity normal ./acronym
+
+      - name: Executing Gigasecond
+        run: |
+          dotnet restore ./gigasecond
+          dotnet build --no-restore ./gigasecond
+          dotnet test --no-build --verbosity normal ./gigasecond
+
+      - name: Executing Grains
+        run: |
+          dotnet restore ./grains
+          dotnet build --no-restore ./grains
+          dotnet test --no-build --verbosity normal ./grains
+
+      - name: Executing Hello-world
+        run: |
+          dotnet restore ./hello-word
+          dotnet build --no-restore ./hello-word
+          dotnet test --no-build --verbosity normal ./hello-word
+
+      - name: Executing Isogram
+        run: |
+          dotnet restore ./isogram
+          dotnet build --no-restore ./isogram
+          dotnet test --no-build --verbosity normal ./isogram
+
+      - name: Executing Leap
+        run: |
+          dotnet restore ./leap
+          dotnet build --no-restore ./leap
+          dotnet test --no-build --verbosity normal ./leap
+
+      - name: Executing Lucians Luscious Lasagna
+        run: |
+          dotnet restore ./lucians-luscious-lasagna
+          dotnet build --no-restore ./lucians-luscious-lasagna
+          dotnet test --no-build --verbosity normal ./lucians-luscious-lasagna
+
+      - name: Executing Pangram
+        run: |
+          dotnet restore ./pangram
+          dotnet build --no-restore ./pangram
+          dotnet test --no-build --verbosity normal ./pangram
+
+      - name: Executing Perfect Numbers
+        run: |
+          dotnet restore ./perfect-numbers
+          dotnet build --no-restore ./perfect-numbers
+          dotnet test --no-build --verbosity normal ./perfect-numbers
+
+      - name: Executing Two-fer
+        run: |
+          dotnet restore ./two-fer
+          dotnet build --no-restore ./two-fer
+          dotnet test --no-build --verbosity normal ./two-fer
