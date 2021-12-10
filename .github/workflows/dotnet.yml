@@ -41,9 +41,9 @@ jobs:
 
       - name: Executing Hello-world
         run: |
-          dotnet restore ./hello-word
-          dotnet build --no-restore ./hello-word
-          dotnet test --no-build --verbosity normal ./hello-word
+          dotnet restore ./hello-world
+          dotnet build --no-restore ./hello-world
+          dotnet test --no-build --verbosity normal ./hello-world
 
       - name: Executing Isogram
         run: |
