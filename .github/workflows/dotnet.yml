@@ -6,15 +6,13 @@ on:
   pull_request:
     branches: [main]
 
-defaults:
-  run:
-    shell: bash
-    working-directory: csharp
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./csharp
     steps:
       - uses: actions/checkout@v2
 
@@ -23,14 +21,9 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - name: Restore dependencies
-        run: dotnet restore
+      - name: Executing Acronym
         working-directory: ./acronym
-
-      - name: Build
-        run: dotnet build
-        working-directory: ./acronym
-
-      - name: Test
-        run: dotnet test --no-build --verbosity normal
-        working-directory: ./acronym
+        run: |
+          dotnet restore
+          dotnet build --no-restore
+          dotnet test --no-build --verbosity normal
