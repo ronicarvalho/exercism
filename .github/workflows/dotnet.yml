@@ -1,26 +1,36 @@
-name: .NET
+name: .NET CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
+
+defaults:
+  run:
+    shell: bash
+    working-directory: csharp
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
 
-    - name: Restore dependencies 
-      run: dotnet restore
-      working-directory: ./chsarp/acronym
+      - name: Restore dependencies
+        run: dotnet restore
+        working-directory: ./acronym
 
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-      working-directory: ./chsarp/acronym
+      - name: Build
+        run: dotnet build
+        working-directory: ./acronym
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+        working-directory: ./acronym
