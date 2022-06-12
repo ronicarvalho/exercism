@@ -98,3 +98,9 @@ jobs:
           dotnet restore ./resistor-color
           dotnet build --no-restore ./resistor-color
           dotnet test --no-build --verbosity normal ./resistor-color
+
+      - name: Executing Cars-Assemble
+        run: |
+          dotnet restore ./cars-assemble
+          dotnet build --no-restore ./cars-assemble
+          dotnet test --no-build --verbosity normal ./cars-assemble
