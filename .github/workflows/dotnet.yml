@@ -19,7 +19,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 6.0.x
 
       - name: Executing Acronym
         run: |
@@ -80,3 +80,21 @@ jobs:
           dotnet restore ./two-fer
           dotnet build --no-restore ./two-fer
           dotnet test --no-build --verbosity normal ./two-fer
+          
+      - name: Executing Collatz-Conjecture
+        run: |
+          dotnet restore ./collatz-conjecture
+          dotnet build --no-restore ./collatz-conjecture
+          dotnet test --no-build --verbosity normal ./collatz-conjecture
+          
+      - name: Executing Annalyns-Infiltration
+        run: |
+          dotnet restore ./annalyns-infiltration
+          dotnet build --no-restore ./annalyns-infiltration
+          dotnet test --no-build --verbosity normal ./annalyns-infiltration
+          
+      - name: Executing Resistor-Color
+        run: |
+          dotnet restore ./resistor-color
+          dotnet build --no-restore ./resistor-color
+          dotnet test --no-build --verbosity normal ./resistor-color
