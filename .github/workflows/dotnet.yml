@@ -104,3 +104,9 @@ jobs:
           dotnet restore ./cars-assemble
           dotnet build --no-restore ./cars-assemble
           dotnet test --no-build --verbosity normal ./cars-assemble
+
+      - name: Executing Elons-Toys
+        run: |
+          dotnet restore ./elons-toys
+          dotnet build --no-restore ./elons-toys
+          dotnet test --no-build --verbosity normal ./elons-toys
